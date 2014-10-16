@@ -2,10 +2,68 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+		
+		<link rel="stylesheet" href="lib/css/normalize.css">
+  	<link rel="stylesheet" href="lib/css/foundation.css">
+  	<link rel='stylesheet' href='/stylesheets/style.css' />
+  
+	  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	  <script src="lib/js/vendor/modernizr.js"></script>
+
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  	<div id='wrapper'>
+  		<div id='container'>
+  			<div id='title'>
+  				<h1>Remember When We...<span class='event'><%= event %></span></h1>
+  			</div>
+  			<ul class="orbit" data-orbit>
+  			  <li>
+  			    <img src="<%= image1 %>" alt="<%= image1Alt %>" />
+  			    <div class="orbit-caption">
+  			      <%= image1Caption %>
+  			    </div>
+  			  </li>
+  			  <li class="active">
+  			    <img src="<%= image2 %>" alt="<%= image2Alt %>" />
+  			    <div class="orbit-caption">
+  			      <%= image2Caption %>
+  			    </div>
+  			  </li>
+  			  <li>
+  			    <img src="<%= image3 %>" alt="<%= image3Alt %>" />
+  			    <div class="orbit-caption">
+  			      <%= image3Caption %>
+  			    </div>
+  			  </li>
+  			</ul>
+  			<div id='body'>
+  				<dl class="tabs" data-tab>
+  				  <dd class="active"><a href="#panel1">About Us</a></dd>
+  				  <dd><a href="#panel2">Log-in</a></dd>
+  				  <dd><a href="#panel3">Create an Account</a></dd>
+  				</dl>
+  				<div class="tabs-content">
+  				  <div class="content active" id="panel1">
+  				  	<p>Welcome to Remember When We... Create an interactive an app to share photos, memories of special events in your life.</p>
+  				  </div>
+  				  <div class="content" id="panel2">
+  				  	<form id='login'>
+  				  		<input type='email' placeholder='Your E-mail'>
+  				  		<input type='password' placeholder='Password'>
+  				  	</form>
+  				  </div>
+  				  <div class="content" id="panel3">
+  				    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+  				  </div>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  	<script src="lib/js/vendor/jquery.js"></script>
+  	  <script src="lib/js/foundation.min.js"></script>
+  	  <script>
+  	    $(document).foundation();
+  	  </script>
   </body>
 </html>

@@ -1,17 +1,40 @@
 {
   "name": "pshare",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node ./bin/www"
-  },
+  "version": "1.0.0",
+  "description": "A photosharing project",
+  "main": "server.js",
   "dependencies": {
-    "express": "~4.2.0",
-    "static-favicon": "~1.0.0",
-    "morgan": "~1.0.0",
-    "cookie-parser": "~1.0.1",
-    "body-parser": "~1.0.0",
-    "debug": "~0.7.4",
-    "ejs": "~0.8.5"
-  }
+    "debug": "^0.7.4",
+    "bcryptjs": "^0.7.12",
+    "cookie-parser": "^1.0.1",
+    "express-session": "^1.8.2",
+    "express": "^4.2.0",
+    "body-parser": "^1.0.2",
+    "multer": "^0.1.6",
+    "morgan": "^1.0.1",
+    "ejs": "^0.8.8",
+    "passport": "^0.2.1",
+    "passport-facebook": "^1.0.3",
+    "passport-google": "^0.3.0",
+    "orchestrate": "^0.3.12",
+    "passport-local": "^1.0.0",
+    "passport-twitter": "^1.0.2",
+    "serve-favicon": "^2.1.5",
+    "mysql": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pazell981/pshare"
+  },
+  "author": "Paul Zellmer",
+  "license": "Apache",
+  "bugs": {
+    "url": "https://github.com/pazell981/pshare/issues"
+  },
+  "homepage": "https://github.com/pazell981/pshare"
 }

@@ -1,8 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@import url(http://fonts.googleapis.com/css?family=Allura|Open+Sans+Condensed:300,700,300italic);
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans Condensed', sans-serif;
 }
-
+h1, h2, h3, h4, h5, h6{
+	font-family: 'Allura', cursive;
+	color: #443344;
+}
 a {
   color: #00B7FF;
+}
+.event{
+	font-family: 'Allura', cursive;
+	color: #ddddcc;
+	font-size: .75em;
+}
+.orbit {
+	margin: -6em;
+	width: 100%;
+	height: 100%;
+}
+.orbit img {
+	margin: -3em 0;
+	width: 100%;
+}
+.orbit-container{
+	border-bottom: 4px outset #ddddcc;
+}
+#title{
+	width: 100%;
+	height: 6em;
+	background-color: #aa8877;
+	padding: 1em 2em;
+}
+#title h1{
+	font-size: 4em !important;
+	margin: 0 !important;
+	color: #443344;
+}
+#wrapper{
+	width: 100vw;
+	height: 100vh;
+	background-color: #ccbb99;
+	background-image:
+		repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+		repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+		linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+		linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+	background-size: 70px 120px;
+}
+#container{
+	width: 80vw;
+	height: 100vh;
+	margin: 0 auto;
+	overflow-y: scroll;
+	background-color: #ffffee;
+	box-shadow: 10px 10px 5px #888888;
+}
+#body{
+		padding: .5em;
 }
