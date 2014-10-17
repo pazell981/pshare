@@ -6,14 +6,17 @@
 }
 h1, h2, h3, h4, h5, h6{
 	font-family: 'Allura', cursive;
-	color: #443344;
+	color: rgb(68,51,68);
 }
 a {
-  color: #00B7FF;
+  color: rgb(68,51,68);
+}
+#login input[type='submit'], #registration input[type='submit']{
+	margin-right: 60px;
 }
 .event{
 	font-family: 'Allura', cursive;
-	color: #ddddcc;
+	color: rgb(221,221,204);
 	font-size: .75em;
 }
 .orbit {
@@ -26,18 +29,18 @@ a {
 	width: 100%;
 }
 .orbit-container{
-	border-bottom: 4px outset #ddddcc;
+	border-bottom: 4px outset rgb(221,221,204);
 }
 #title{
 	width: 100%;
 	height: 6em;
-	background-color: #aa8877;
+	background-color: rgb(170,136,119);
 	padding: 1em 2em;
 }
 #title h1{
 	font-size: 4em !important;
 	margin: 0 !important;
-	color: #443344;
+	color: rgb(68,51,68);
 }
 #wrapper{
 	width: 100vw;
