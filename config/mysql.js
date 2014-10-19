@@ -1,21 +1,33 @@
-var mysql = require('mysql');
+var Sequelize = require('sequelize');
 
-var user = process.env.DB_USER || 'root';
-var password = process.env.DB_PASSWORD || 'root';
+// db config
+var env = "development";
+var config = require('./../database.json')[env];
+var password = config.password ? config.password : null;
 
+// initialize database connection
+var sequelize = new Sequelize(
+	config.database,
+	config.user,
+	config.password,
+	{
+		host: config.host,
+		logging: console.log,
+		define: {
+			timestamps: false
+		}
+	}
+);
 
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : user,
-  password : password
-});
+sequelize
+  .authenticate()
+  .complete(function(err) {
+    if (!!err) {
+      console.log('Unable to connect to the database:', err)
+    } else {
+      console.log('Connection has been established successfully.')
+    }
+  })
 
-connection.connect();
-
-connection.query('SELECT 1 + 1 AS solution', function(err, rows, fields) {
-  if (err) throw err;
-
-  console.log('MySQL is connected.');
-});
-
-connection.end();
+var crypto = require('crypto');
+var DataTypes = require("sequelize");

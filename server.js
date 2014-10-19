@@ -7,6 +7,7 @@ var logger = require('morgan');
 var multer = require('multer');
 var session = require('express-session');
 var passport = require('passport');
+var flash = require('connect-flash');
 var LocalStrategy = require('passport-local');
 var TwitterStrategy = require('passport-twitter');
 var GoogleStrategy = require('passport-google');
@@ -27,10 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 var mysql = require('./config/mysql');
-var passport = require('./config/passport');
-var routes = require('./config/routes')(app);
+var routes = require('./config/routes')(app, passport);
 
 app.use(function(req, res, next){
   var err = req.session.error,

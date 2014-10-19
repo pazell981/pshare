@@ -48,13 +48,20 @@
   				  	<p>Welcome to Remember When We... Create an interactive an app to share photos, memories of special events in your life.</p>
   				  </div>
   				  <div class="content" id="panel2">
-  				  	<form id='login'>
+              <% if (loginMessage.length > 0) { %>
+                <div data-alert class="alert-box alert round">
+                  <%= loginMessage %>
+                  <a href="#" class="close">&times;</a>
+                </div>
+              <% } %>
+  				  	<form id='login' action="/login" method="post" data-abide>
   				  		<div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">E-mail</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='email' name='email' placeholder='Your E-mail'> 
+				  		   		<input type='email' name='email' placeholder='Your E-mail' required pattern="email">
+                    <small class="error">An email address is required.</small>
 				  		   	</div>
   				  		</div>
   				  		<div class="row collapse">
@@ -62,7 +69,8 @@
 				  		      <span class="prefix">Password</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='password' name='password' placeholder='Password'> 
+				  		   		<input type='password' name='password' placeholder='Password' required pattern="alpha_numeric"> 
+                    <small class="error">A alphanumeric password is required.</small>
 				  		   	</div>
   				  		</div>
   				  		<div class="small-12 large-12 columns">
@@ -71,46 +79,65 @@
   				  	</form>
   				  </div>
   				  <div class="content" id="panel3">
-  				  	<form id='registration'>
+              <% if (regMessage.length > 0) { %>
+                <div data-alert class="alert-box alert round">
+                  <%= regMessage %>
+                  <a href="#" class="close">&times;</a>
+                </div>
+              <% } %>
+  				  	<form id='registration' action="/signup" method="post" data-abide>
   				  		<div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">First Name</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='text' name='firstname' placeholder='Your First Name'> 
-				  		   	</div>
+				  		   		<input type='text' name='firstname' placeholder='Your First Name' required pattern="alpha"> 
+                    <small class="error">Your first name is required.</small>
+                  </div>
   				  		</div>
   				  		 <div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">Last Name</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='text' name='lastname' placeholder='Your Last Name'> 
-				  		   	</div>
+				  		   		<input type='text' name='lastname' placeholder='Your Last Name' required pattern="alpha"> 
+				  		   	  <small class="error">Your last name is required.</small>
+                  </div>
   				  		</div>
-  				  		<div class="row collapse">
-				  		   	<div class="small-3 large-2 columns">
-				  		      <span class="prefix">E-mail</span>
-				  		   	</div>
-				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='email' name='email' placeholder='Your E-mail'> 
-				  		   	</div>
-  				  		</div>
+                <div class="row collapse">
+                  <div class="small-3 large-2 columns">
+                    <span class="prefix">E-mail</span>
+                  </div>
+                  <div class="small-9 large-10 columns">
+                    <input type='email' name='email' placeholder='Your E-mail' required pattern="email"> 
+                    <small class="error">An email address is required.</small>
+                  </div>
+                </div>
+                <div class="row collapse">
+                  <div class="small-3 large-2 columns">
+                    <span class="prefix">Profile Photo:</span>
+                  </div>
+                  <div class="small-9 large-10 columns">
+                    <input type='file' name='photo' placeholder='Photo Upload'> 
+                  </div>
+                </div>
   				  		<div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">Password</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='password' placeholder='Password'> 
-				  		   	</div>
+				  		   		<input type='password' id='password' placeholder='Password' required pattern="alpha_numeric"> 
+				  		   	  <small class="error">A alphanumeric password is required.</small>
+                  </div>
   				  		</div>
   				  		<div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">Password Confirmation</span>
 				  		   	</div>
 				  		   	<div class="small-9 large-10 columns">
-				  		   		<input type='password' placeholder='Confirm Password'> 
-				  		   	</div>
+				  		   		<input type='password' placeholder='Confirm Password' required pattern="alpha_numeric" data-equalto="password"> 
+                    <small class="error">Password confirmation must match password.</small>
+                  </div>
   				  		</div>
   				  		<div class="small-12 large-12 columns">
   				  			<input type='submit' value='Create Account' class='button right'>

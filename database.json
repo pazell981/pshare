@@ -1,0 +1,17 @@
+{
+  "development": {
+    "driver": "mysql",
+    "host": "localhost",
+    "user": "root",
+    "database": "rememberwhenwe",
+    "password": "root"
+  },
+ 
+  "production": {
+    "driver": "mysql",
+    "host": "localhost",
+    "user": "rememberwhenwe",
+    "database": "rememberwhenwe",
+    "password": "OoRoAvRWka0f"
+  }
+}

@@ -1,6 +1,4 @@
-var passport = require('passport');
-
-module.exports = function Routes(app) {
+module.exports = function Routes(app, passport) {
     app.get('/', function(req, res) {
         var agent = req.header('user-agent');
         if (/mobile/i.test(agent)) {
@@ -15,7 +13,9 @@ module.exports = function Routes(app) {
                 image2Caption: 'Corporate Events',
                 image3: './images/special-event.jpg',
                 image3Alt: 'Special Events',
-                image3Caption: 'Special Events'
+                image3Caption: 'Special Events',
+                loginMessage: '' || req.flash("loginMessage"),
+                regMessage: '' || req.flash("regMessage")
             });
         } else {
             res.render('index', {
@@ -29,53 +29,27 @@ module.exports = function Routes(app) {
                 image2Caption: 'Corporate Events',
                 image3: './images/special-event.jpg',
                 image3Alt: 'Special Events',
-                image3Caption: 'Special Events'
+                image3Caption: 'Special Events',
+                loginMessage: '' || req.flash("loginMessage"),
+                regMessage: '' || req.flash("regMessage")
             });
         }
     });
-    app.post('/local-reg', passport.authenticate('local-signup', {
-        successRedirect: '/',
-        failureRedirect: '/signin'
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/profile',
+        failureRedirect : '/',
+        failureFlash : true
     }));
-    app.post('/login', passport.authenticate('local-signin', {
-        successRedirect: '/',
-        failureRedirect: '/signin'
+    app.post('/login', passport.authenticate('local-login', {
+        successRedirect : '/profile',
+        failureRedirect : '/login',
+        failureFlash : true
     }));
-    app.get('/auth/facebook', passport.authenticate('facebook'));
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/home',
-            failureRedirect: '/'
-        }));
-    app.get('/auth/facebook',
-        passport.authenticate('facebook'),
-        function(req, res) {});
-    app.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            failureRedirect: '/'
-        }),
-        function(req, res) {
-            res.redirect('/account');
-        });
-    app.get('/auth/google',
-        passport.authenticate('google'),
-        function(req, res) {});
-    app.get('/auth/google/callback',
-        passport.authenticate('google', {
-            failureRedirect: '/'
-        }),
-        function(req, res) {
-            res.redirect('/account');
-        });
-    app.get('/auth/twitter', passport.authenticate('twitter'));
+}
 
-    app.get('/auth/twitter/callback',
-        passport.authenticate('twitter', {
-            successRedirect: '/',
-            failureRedirect: '/login'
-        }));
-    app.get('/logout', function(req, res) {
-        req.logout();
-        res.redirect('/');
-    });
+function isLoggedIn(req, res, next) {
+
+    if (req.isAuthenticated())
+        return next();
+    res.redirect('/');
 }
