@@ -36,13 +36,13 @@ module.exports = function Routes(app, passport) {
         }
     });
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile',
+        successRedirect : '/eventHome',
         failureRedirect : '/',
         failureFlash : true
     }));
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile',
-        failureRedirect : '/login',
+        successRedirect : '/eventHome',
+        failureRedirect : '/',
         failureFlash : true
     }));
 }

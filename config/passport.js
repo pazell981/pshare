@@ -3,7 +3,7 @@ var GoogleStrategy = require('passport-google').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 
-var User = require('../app/models/user');
+var User = require('../models/user');
 
 module.exports = function(passport) {
     passport.serializeUser(function (user, done){
@@ -22,22 +22,30 @@ module.exports = function(passport) {
         passReqToCallback : true
     },
     function(req, email, password, done) {
-        User.findOne({ 'local.email' :  email }, function(err, user) {
-            if (err)
-                return done(err);
-            if (user) {
-                return done(null, false, req.flash('regMessage', 'This email is already registered, please log-in.'));
-            } else {
-                var newUser = new User();
-                newUser.local.email    = email;
-                newUser.local.password = newUser.generateHash(password);
-                newUser.save(function(err) {
-                    if (err)
-                        throw err;
-                    return done(null, newUser);
-                });
-            }
-
+        console.log(req);
+        process.nextTick(function(){
+            User.findOne({ 'local.email' :  email }, function(err, user) {
+                if (err)
+                    return done(err);
+                if (user) {
+                    return done(null, false, req.flash('regMessage', 'This email is already registered, please log-in.'));
+                } else {
+                    var newUser = User.build({
+                        email: email,
+                        first_name: firstname,
+                        last_name: lastname,
+                        photo: photo,
+                        password: password
+                    })
+                    newUser.add(
+                        function(success){
+                            res.json({ message: 'User created!' });
+                        },
+                        function(err) {
+                            res.send(err);
+                        });
+                }
+            });
         });
     }));
     passport.use('local-login', new LocalStrategy({

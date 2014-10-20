@@ -4,7 +4,8 @@
     "host": "localhost",
     "user": "root",
     "database": "rememberwhenwe",
-    "password": "root"
+    "password": "root",
+    "port": 8889
   },
  
   "production": {
