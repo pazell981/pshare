@@ -20,7 +20,7 @@ a {
 	font-size: .75em;
 }
 .margin-right{
-	margin-right: 50px;
+	margin-right: -25px;
 }
 .orbit {
 	margin: -6em;
@@ -51,6 +51,9 @@ a {
 .orbit-container {
     border-bottom: 4px outset rgb(221, 221, 204);
 }
+#facebook-circle{
+	margin-right: -420px;
+}
 #facebook-circle .fb-outside {
     display: block;
     margin: 0 auto;
@@ -79,7 +82,7 @@ a {
     width: 3em;
 }
 #fb-3 .fb-text {
-    background: #425F9C;
+    background: #aa8877;
     color: #FFFFFF;
     font-size: 2em;
     height: 100%;
@@ -90,7 +93,7 @@ a {
     -webkit-border-radius: 50%;
 }
 #fb-3 .fb-click {
-    background: #35528F;
+    background: #876d5f;
     opacity: 0;
     padding: 5px 10px 5px;
     margin-top: 5px;
@@ -113,6 +116,9 @@ a {
 }
 #fb-3:hover .fb-click a{
     color: #FFFFFF;
+}
+#google-circle{
+	margin-right: -250px;
 }
 #google-circle .go-outside {
     display: block;
@@ -142,7 +148,7 @@ a {
     width: 3em;
 }
 #go-3 .go-text {
-    background: #DD4B39;
+    background: #aa8877;
     color: #FFFFFF;
     font-size: 2em;
     height: 100%;
@@ -153,7 +159,7 @@ a {
     -webkit-border-radius: 50%;
 }
 #go-3 .go-click {
-    background: #B72513;
+    background: #876d5f;
     opacity: 0;
     padding: 5px 10px 5px;
     margin-top: 5px;
@@ -176,6 +182,9 @@ a {
 }
 #go-3:hover .go-click a{
     color: #FFFFFF;
+}
+#twitter-circle{
+	margin-right: -75px;
 }
 #twitter-circle .tw-outside {
     display: block;
@@ -205,7 +214,7 @@ a {
     width: 3em;
 }
 #tw-3 .tw-text {
-    background: #42E7FF;
+    background: #aa8877;
     color: #FFFFFF;
     font-size: 2em;
     height: 100%;
@@ -216,7 +225,7 @@ a {
     -webkit-border-radius: 50%;
 }
 #tw-3 .tw-click {
-    background: #1CC1F7;
+    background: #876d5f;
     opacity: 0;
     padding: 5px 10px 5px;
     margin-top: 5px;
@@ -228,14 +237,14 @@ a {
     -webkit-border-radius: 5px;
 }
 #tw-3:hover .tw-text {
-    margin-left: -50px;
+    margin-left: -100px;
     transform: rotate(-360deg);
     -moz-transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
 }
 #tw-3:hover .tw-click {
     opacity: 1;
-    margin-left: -20px;
+    margin-left: -80px;
 }
 #tw-3:hover .tw-click a{
     color: #FFFFFF;
