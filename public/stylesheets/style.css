@@ -19,6 +19,9 @@ a {
 	color: rgb(221,221,204);
 	font-size: .75em;
 }
+.margin-right{
+	margin-right: 50px;
+}
 .orbit {
 	margin: -6em;
 	width: 100%;
@@ -30,6 +33,212 @@ a {
 }
 .orbit-container{
 	border-bottom: 4px outset rgb(221,221,204);
+}
+.inline{
+	display: inline-block;
+	margin-top: 5px;
+	width: 150px;
+}
+.orbit {
+    margin: -6em;
+    width: 100%;
+    height: 100%;
+}
+.orbit img {
+    margin: -3em 0;
+    width: 100%;
+}
+.orbit-container {
+    border-bottom: 4px outset rgb(221, 221, 204);
+}
+#facebook-circle .fb-outside {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+#facebook-circle .fb-text, #facebook-circle .fb-click {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 100%;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+}
+#facebook-circle .fb-text {
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 9999;
+}
+#facebook-circle .fb-click {
+    z-index: 8888;
+}
+
+#fb-3 {
+    height: 3em;
+    width: 3em;
+}
+#fb-3 .fb-text {
+    background: #425F9C;
+    color: #FFFFFF;
+    font-size: 2em;
+    height: 100%;
+    padding-top: 0px;
+    padding-left: 15px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+#fb-3 .fb-click {
+    background: #35528F;
+    opacity: 0;
+    padding: 5px 10px 5px;
+    margin-top: 5px;
+    margin-left: -100px;
+    padding-left: 30px;
+    width: 150px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#fb-3:hover .fb-text {
+    margin-left: -50px;
+    transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+}
+#fb-3:hover .fb-click {
+    opacity: 1;
+    margin-left: -20px;
+}
+#fb-3:hover .fb-click a{
+    color: #FFFFFF;
+}
+#google-circle .go-outside {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+#google-circle .go-text, #google-circle .go-click {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 100%;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+}
+#google-circle .go-text {
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 9999;
+}
+#google-circle .go-click {
+    z-index: 8888;
+}
+
+#go-3 {
+    height: 3em;
+    width: 3em;
+}
+#go-3 .go-text {
+    background: #DD4B39;
+    color: #FFFFFF;
+    font-size: 2em;
+    height: 100%;
+    padding-top: 0px;
+    padding-left: 10px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+#go-3 .go-click {
+    background: #B72513;
+    opacity: 0;
+    padding: 5px 10px 5px;
+    margin-top: 5px;
+    margin-left: -100px;
+    padding-left: 30px;
+    width: 150px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#go-3:hover .go-text {
+    margin-left: -50px;
+    transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+}
+#go-3:hover .go-click {
+    opacity: 1;
+    margin-left: -20px;
+}
+#go-3:hover .go-click a{
+    color: #FFFFFF;
+}
+#twitter-circle .tw-outside {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+#twitter-circle .tw-text, #twitter-circle .tw-click {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    width: 100%;
+    transition: 0.3s ease all;
+    -moz-transition: 0.3s ease all;
+    -webkit-transition: 0.3s ease all;
+}
+#twitter-circle .tw-text {
+    font-size: 20px;
+    font-weight: 700;
+    z-index: 9999;
+}
+#twitter-circle .tw-click {
+    z-index: 8888;
+}
+
+#tw-3 {
+    height: 3em;
+    width: 3em;
+}
+#tw-3 .tw-text {
+    background: #42E7FF;
+    color: #FFFFFF;
+    font-size: 2em;
+    height: 100%;
+    padding-top: 0px;
+    padding-left: 10px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+#tw-3 .tw-click {
+    background: #1CC1F7;
+    opacity: 0;
+    padding: 5px 10px 5px;
+    margin-top: 5px;
+    margin-left: -100px;
+    padding-left: 30px;
+    width: 150px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+#tw-3:hover .tw-text {
+    margin-left: -50px;
+    transform: rotate(-360deg);
+    -moz-transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+}
+#tw-3:hover .tw-click {
+    opacity: 1;
+    margin-left: -20px;
+}
+#tw-3:hover .tw-click a{
+    color: #FFFFFF;
 }
 #title{
 	width: 100%;

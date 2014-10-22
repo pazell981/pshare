@@ -42,7 +42,9 @@ module.exports = function Routes(app, passport) {
         }
     });
 
-    
+    app.get('/', function (req, res){
+
+    })
 
     app.post('/signup', function (req, res){
         db.query("SELECT * FROM users WHERE email='" + req.body.email+"'",function(err, result, fields){
@@ -80,6 +82,12 @@ module.exports = function Routes(app, passport) {
         failureFlash : true
     }));
 
+    app.get('/auth/facebook', passport.authenticate('facebook', {scope: 'email'}));
+
+    app.get('/auth/facebook/callback', passport.authenticate('facebook', {
+        successRedirect: '/eventHome',
+        failureRedirect: '/'
+    }))
 }
 
 function isLoggedIn(req, res, next) {

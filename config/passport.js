@@ -35,8 +35,19 @@ module.exports = function(passport) {
                 return done(null, false, req.flash('loginMessage', 'Oops! The password does not match the one on file.'));
             }
             return done(null, rows[0]);         
-        
         });
     }));
+    // passport.use(new FacebookStrategy({
+    //     clientID: configAuth.facebookAuth.clientID,
+    //     clientSecret: configAuth.facebookAuth.clientSecret,
+    //     callbackURL: configAuth.facebookAuth.callbackURL
+    // },
+    // function (token, refreshToken, profile, done){
+    //     process.nextTick(function(){
+    //         db.query("SELECT * FROM `users` WHERE `email` = '" + email + "'",function(err,rows){}
+                
+    //     })
+    // }
+    // }))
 }
 
