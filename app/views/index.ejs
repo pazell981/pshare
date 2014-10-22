@@ -77,6 +77,7 @@
   				  			<input type='submit' value='Login' class='button right'>
   				  		</div>
   				  	</form>
+              <a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
   				  </div>
   				  <div class="content" id="panel3">
               <% if (regMessage.length > 0) { %>
@@ -85,7 +86,7 @@
                   <a href="#" class="close">&times;</a>
                 </div>
               <% } %>
-  				  	<form id='registration' action="/signup" method="post" data-abide>
+  				  	<form id='registration' action="/signup" method="post" enctype="multipart/form-data" data-abide>
   				  		<div class="row collapse">
 				  		   	<div class="small-3 large-2 columns">
 				  		      <span class="prefix">First Name</span>

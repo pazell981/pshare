@@ -4,6 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fs = require('fs');
 var multer = require('multer');
 var session = require('express-session');
 var passport = require('passport');
@@ -28,9 +29,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(multer({dest: "./uploads/"}))
 app.use(flash());
 
 var mysql = require('./config/mysql');
+var passport_config = require('./config/passport')(passport);
 var routes = require('./config/routes')(app, passport);
 
 app.use(function(req, res, next){
