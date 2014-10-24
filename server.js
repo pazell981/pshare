@@ -29,7 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'supernova', saveUninitialized: true, resave: true}));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(multer({dest: "./uploads/"}))
+app.use(multer({dest: "uploads/"}))
 app.use(flash());
 
 var mysql = require('./config/mysql');

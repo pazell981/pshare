@@ -2,7 +2,6 @@
   "name": "pshare",
   "version": "1.0.0",
   "description": "A photosharing project",
-  "main": "server.js",
   "dependencies": {
     "bcryptjs": "^2.0.2",
     "body-parser": "^1.9.0",
