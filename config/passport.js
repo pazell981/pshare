@@ -23,7 +23,7 @@ module.exports = function(passport) {
         passReqToCallback : true 
     },
     function (req, email, password, done){ 
-         db.query("SELECT * FROM `users` WHERE `email` = '" + email + "'",function(err,rows){
+         db.query("SELECT * FROM `facebook_logins` WHERE `email` = '" + email + "'",function(err,rows){
             if (err){
                 return done(err);                
             }
@@ -45,9 +45,9 @@ module.exports = function(passport) {
     // function (token, refreshToken, profile, done){
     //     process.nextTick(function(){
     //         db.query("SELECT * FROM `users` WHERE `email` = '" + email + "'",function(err,rows){}
-                
+
     //     })
     // }
-    // }))
+    // ))
 }
 
