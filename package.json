@@ -28,7 +28,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app",
+    "start": "node bin/www",
     "test": "mocha"
   },
   "repository": {
