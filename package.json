@@ -22,8 +22,7 @@
     "passport-google": "^0.3.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.2",
-    "readable-stream": "^1.1.13",
-    "serve-favicon": "^2.1.6"
+    "readable-stream": "^1.1.13"
   },
   "devDependencies": {},
   "scripts": {
