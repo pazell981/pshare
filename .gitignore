@@ -1,6 +1,9 @@
 database.json
 config/config.json
 config/auth.js
+node_modules/
+.elasticbeanstalk/
+EOT
 
 # Logs
 logs
