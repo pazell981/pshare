@@ -1,6 +1,6 @@
 {
   "name": "pshare",
-  "version": "1.0.0",
+  "version": "1.0.0-1",
   "description": "A photosharing project",
   "dependencies": {
     "bcryptjs": "^2.0.2",
@@ -38,5 +38,9 @@
   "bugs": {
     "url": "https://github.com/pazell981/pshare/issues"
   },
-  "homepage": "https://github.com/pazell981/pshare"
+  "homepage": "https://github.com/pazell981/pshare",
+  "subdomain": "pshare",
+  "engines": {
+    "node": "0.10.31"
+  }
 }

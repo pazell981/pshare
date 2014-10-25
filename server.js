@@ -32,6 +32,7 @@ app.use(passport.session());
 app.use(multer({dest: "uploads/"}))
 app.use(flash());
 
+var debug = require('debug')('pshare');
 var mysql = require('./config/mysql');
 var passport_config = require('./config/passport')(passport);
 var routes = require('./config/routes')(app, passport);
