@@ -4,9 +4,9 @@ var database = require('../database.json')[env];
 
 module.exports = {
 		db : MySql.createConnection({
-		user: database.user,
-		password: database.password,
-		database: database.database,
-		port: database.port
+			host: process.env.RDS_HOSTNAME || database.host,
+			user: process.env.RDS_USERNAME || database.user,
+			password: process.env.RDS_PASSWORD || database.password,
+			port: process.env.RDS_PORT || database.port
 	})
 }

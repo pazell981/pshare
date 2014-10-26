@@ -1,6 +1,5 @@
 database.json
-config/config.json
-config/auth.js
+config/social.json
 node_modules/
 .elasticbeanstalk/
 EOT

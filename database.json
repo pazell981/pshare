@@ -6,13 +6,5 @@
     "database": "rememberwhenwe",
     "password": "root",
     "port": 8889
-  },
- 
-  "production": {
-    "driver": "mysql",
-    "host": "localhost",
-    "user": "rememberwhenwe",
-    "database": "rememberwhenwe",
-    "password": "OoRoAvRWka0f"
   }
 }
