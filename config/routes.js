@@ -4,6 +4,14 @@ var multer = require('multer');
 var fs = require('fs');
 db.connect();
 
+db.query("SELECT * FROM users WHERE id=1", function (err, row){
+    if (err){
+        console.log(err);
+    } else {
+        console.log(row);
+    }
+})
+
 module.exports = function Routes(app, passport) {
     app.get('/', function (req, res){
         var agent = req.header('user-agent');
@@ -47,7 +55,7 @@ module.exports = function Routes(app, passport) {
     })
 
     app.post('/signup', function (req, res){
-        db.query("SELECT * FROM users WHERE email='" + req.body.email+"'",function(err, result, fields){
+        db.query("SELECT * FROM users WHERE email='" + req.body.email+"'", function (err, result, fields){
             if(result.length!=0){
                 req.flash('regMessage', 'This email is already registered, please log-in.');
                 res.redirect('/');
