@@ -55,8 +55,8 @@ module.exports = function Routes(app, passport) {
     })
 
     app.post('/signup', function (req, res){
-        db.query("SELECT * FROM users WHERE email='" + req.body.email+"'", function (err, result, fields){
-            if(result.length!=0){
+        db.query("SELECT * FROM users WHERE email='" + req.body.email+"'", function (err, result){
+            if(result.length>0){
                 req.flash('regMessage', 'This email is already registered, please log-in.');
                 res.redirect('/');
             } else {

@@ -51,6 +51,9 @@ a {
 .orbit-container {
     border-bottom: 4px outset rgb(221, 221, 204);
 }
+#body{
+	padding: 20px;
+}
 #facebook-circle{
 	margin-right: -420px;
 }
