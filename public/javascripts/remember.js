@@ -1,26 +1,26 @@
 $(document).ready(function (){
 	$(".tw-click").mouseenter(function (){
-		$("#twitter-circle").animate({marginRight: "0px"});
-		$("#google-circle").animate({marginRight: "25px"});
-		$("#facebook-circle").animate({marginRight: "-150px"});
+		$(".twitter-circle").animate({left: "50px"});
+		$(".google-circle").animate({left: "25px"});
+		$(".facebook-circle").animate({left: "100px"});
 	});
 	$(".tw-click").mouseleave(function (){
-		$("#twitter-circle").animate({marginRight: "-75px"});
-		$("#google-circle").animate({marginRight: "-250px"});
-		$("#facebook-circle").animate({marginRight: "-420px"});
+		$(".twitter-circle").animate({left: "75px"});
+		$(".google-circle").animate({left: "150px"});
+		$(".facebook-circle").animate({left: "225px"});
 	});
 	$(".go-click").mouseenter(function (){
-		$("#google-circle").animate({marginRight: "-80px"});
-		$("#facebook-circle").animate({marginRight: "-150px"});
+		$(".google-circle").animate({left: "75px"});
+		$(".facebook-circle").animate({left: "100px"});
 	});
 	$(".go-click").mouseleave(function (){
-		$("#google-circle").animate({marginRight: "-250px"});
-		$("#facebook-circle").animate({marginRight: "-420px"});
+		$(".google-circle").animate({left: "150px"});
+		$(".facebook-circle").animate({left: "225px"});
 	});
 	$(".fb-click").mouseenter(function (){
-		$("#facebook-circle").animate({marginRight: "-250px"});
+		$(".facebook-circle").animate({left: "150px"});
 	});
 	$(".fb-click").mouseleave(function (){
-		$("#facebook-circle").animate({marginRight: "-420px"});
+		$(".facebook-circle").animate({left: "225px"});
 	});
 })

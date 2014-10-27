@@ -4,14 +4,6 @@ var multer = require('multer');
 var fs = require('fs');
 db.connect();
 
-db.query("SELECT * FROM users WHERE id=1", function (err, row){
-    if (err){
-        console.log(err);
-    } else {
-        console.log(row);
-    }
-})
-
 module.exports = function Routes(app, passport) {
     app.get('/', function (req, res){
         var agent = req.header('user-agent');
@@ -50,13 +42,13 @@ module.exports = function Routes(app, passport) {
         }
     });
 
-    app.get('/', function (req, res){
+    app.get('/eventHome', function (req, res){
 
     })
 
     app.post('/signup', function (req, res){
         db.query("SELECT * FROM users WHERE email='" + req.body.email+"'", function (err, result){
-            if(result.length>0){
+            if(!result.length){
                 req.flash('regMessage', 'This email is already registered, please log-in.');
                 res.redirect('/');
             } else {
@@ -100,7 +92,7 @@ module.exports = function Routes(app, passport) {
     app.get('/auth/google', passport.authenticate('google', { scope : ['profile', 'email'] }));
 
     app.get('/auth/google/callback', passport.authenticate('google', {
-            successRedirect : '/profile',
+            successRedirect : '/eventHome',
             failureRedirect : '/'
         })
     );
