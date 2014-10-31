@@ -1,5 +1,5 @@
 $(document).ready(function (){
-	$(".tw-click").mouseenter(function (){
+	$(".tw-text").mouseenter(function (){
 		$(".twitter-circle").animate({left: "50px"});
 		$(".google-circle").animate({left: "25px"});
 		$(".facebook-circle").animate({left: "100px"});
@@ -9,7 +9,7 @@ $(document).ready(function (){
 		$(".google-circle").animate({left: "150px"});
 		$(".facebook-circle").animate({left: "225px"});
 	});
-	$(".go-click").mouseenter(function (){
+	$(".go-text").mouseenter(function (){
 		$(".google-circle").animate({left: "75px"});
 		$(".facebook-circle").animate({left: "100px"});
 	});
@@ -17,7 +17,7 @@ $(document).ready(function (){
 		$(".google-circle").animate({left: "150px"});
 		$(".facebook-circle").animate({left: "225px"});
 	});
-	$(".fb-click").mouseenter(function (){
+	$(".fb-text").mouseenter(function (){
 		$(".facebook-circle").animate({left: "150px"});
 	});
 	$(".fb-click").mouseleave(function (){

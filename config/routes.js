@@ -41,11 +41,33 @@ module.exports = function Routes(app, passport) {
             });
         }
     });
-
-    app.get('/eventHome', function (req, res){
-
+    app.get('/:event_id', function (req,res){
+        res.redirect('/event/:event_id')
     })
 
+    app.get('/eventHome', function (req, res){
+        db.query("SELECT * FROM events_attended WHERE user_id="+req.user.id, function (err, result){
+            if (result.length==0){
+                res.render('lookup')
+            } else if (result.length==1){
+                console.log(result);
+                res.redirect('/event/:event_id');
+            } else {
+                res.render('select');
+            }
+        });
+    })
+    app.get('event/:event_id', function (req, res){
+        db.query("SELECT * FROM events JOIN event_colors ON event.id = event_colors.event_id WHERE events.id="+req.params.event_id, function (err, colors){
+
+        })
+        db.query("SELECT * FROM events JOIN event_hero_images ON event.id = event_hero_images.event_id WHERE events.id="+req.params.event_id, function (err, heroImages){
+
+        })
+        res.render('event', {
+
+        })
+    })
     app.post('/signup', function (req, res){
         db.query("SELECT * FROM users WHERE email='" + req.body.email+"'", function (err, result){
             if(!result.length){
