@@ -1,0 +1,5 @@
+sand: rgb(204,187,153);
+deep-purple: rgb(68,51,68);
+mauve: rgb(170,136,119);
+grey: rgb(221,221,204);
+off-white: rgb(255,255,238)

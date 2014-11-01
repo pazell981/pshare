@@ -1,4 +1,3 @@
-var db = require('../config/mysql.js').db;
 var bcrypt = require('bcryptjs');
 
 var LocalStrategy = require('passport-local').Strategy;
@@ -6,9 +5,9 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 
-configAuth = require('./auth')
+configAuth = require('../../config/auth')
 
-module.exports = function(passport) {
+module.exports = function (passport){
     passport.serializeUser(function (user, done){
         done(null, user.id);
     });
@@ -18,6 +17,7 @@ module.exports = function(passport) {
             done(err, rows[0]);
         });
     });
+
     passport.use('local-login', new LocalStrategy({
         usernameField : 'email',
         passwordField : 'password',
